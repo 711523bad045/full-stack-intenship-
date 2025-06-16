@@ -1,0 +1,27 @@
+ol {
+  margin-left: -40px;
+  margin-top: -20px;
+  list-style-position: inside;
+}
+p{
+  color: red;
+}
+#A{
+    color:green;
+    font-size: large;
+    text-align: center;
+  
+}
+.B{
+  color: aqua;
+  font-size: large;
+  text-align: center;
+
+}
+.C{
+  font-size: large;
+  text-align: center;
+}
+
+
+/* Write your CSS below, don't change the rules above. */
