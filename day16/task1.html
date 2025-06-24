@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Event Example</title>
+</head>
+<body>
+
+<button id="triggerBtn">Say Hello</button>
+<p id="output"></p>
+
+  <h2>Press any key</h2>
+  <pre id="info"></pre>
+
+  <script>
+    document.addEventListener("keydown", function(e) {
+      document.getElementById("info").textContent =
+        `Key: ${e.key}
+Code: ${e.code}
+AltKey: ${e.altKey}
+CtrlKey: ${e.ctrlKey}
+ShiftKey: ${e.shiftKey}
+MetaKey: ${e.metaKey}
+Repeat: ${e.repeat}
+Location: ${e.location}
+IsComposing: ${e.isComposing}`;
+    });
+
+  const button = document.getElementById("triggerBtn");
+  const output = document.getElementById("output");
+
+  // Step 1: Listen for the custom event
+  output.addEventListener("greet", function(event) {
+    output.textContent = "Hello, " + event.detail.name + "!";
+  });
+
+  // Step 2: Dispatch the custom event when the button is clicked
+  button.addEventListener("click", function() {
+    const myEvent = new CustomEvent("greet", {
+      detail: { name: "rajesh" } // You can pass custom data in 'detail'
+    });
+
+    output.dispatchEvent(myEvent); // Send the event to <p id="output">
+  });
+</script>
+
+
+</body>
+</html>
