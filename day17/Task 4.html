@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle</title>
+    <style>
+        body.light {
+            background: white;
+            color: black;
+        }
+
+        body.dark {
+            background: black;
+            color: white;
+        }
+         body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        button {
+            font-size: 2rem;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #count {
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body class="light">
+    <button id="themeToggle">Toggle Theme</button>
+    <div id="main">Some content</div>
+
+    <script>
+        const toggleButton = document.getElementById("themeToggle");
+        const body = document.body;
+
+        toggleButton.addEventListener("click", function () {
+            body.classList.toggle("dark");
+            body.classList.toggle("light");
+        });
+    </script>
+</body>
+
+</html>
